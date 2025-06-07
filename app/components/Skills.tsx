@@ -25,10 +25,10 @@ const Skills: React.FC = () => {
     {
       title: 'Backend',
       skills: [
-        { name: 'Node.js', level: 80 },
-        { name: 'Express', level: 75 },
-        { name: 'MongoDB', level: 70 },
-        { name: 'PostgreSQL', level: 65 },
+        { name: 'Node.js', level: 60 },
+        { name: 'Express', level: 65 },
+        { name: 'MongoDB', level: 60 },
+        // { name: 'PostgreSQL', level: 65 },
         { name: 'REST APIs', level: 85 },
       ],
     },
@@ -37,8 +37,8 @@ const Skills: React.FC = () => {
       skills: [
         { name: 'Git', level: 85 },
         { name: 'Docker', level: 60 },
-        { name: 'AWS', level: 55 },
-        { name: 'Figma', level: 70 },
+        // { name: 'AWS', level: 55 },
+        { name: 'Figma', level: 50 },
         { name: 'Webpack', level: 65 },
       ],
     },
@@ -51,11 +51,6 @@ const Skills: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-gradient-to-br from-green-400 to-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse animation-delay-4000"></div>
-        </div>
 
         <div className="relative z-10">
           {/* Header Section */}
@@ -68,7 +63,7 @@ const Skills: React.FC = () => {
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent">
+              <span className="text-gray-700 dark:text-gray-300">
                 Skills & Technologies
               </span>
             </h2>
@@ -189,20 +184,20 @@ const Skills: React.FC = () => {
               {[
                 'Next.js',
                 'Tailwind CSS',
-                'GraphQL',
+                'Angular',
                 'Redux',
                 'Jest',
                 'Cypress',
-                'Prisma',
+                'Vue.js',
                 'Supabase',
                 'Vercel',
                 'Netlify',
                 'Firebase',
-                'Stripe',
-                'Socket.io',
+                'Render',
+                'React Query',
                 'Three.js',
                 'Framer Motion',
-                'Storybook',
+                'Angular Material',
               ].map((tech, index) => (
                 <span
                   key={index}

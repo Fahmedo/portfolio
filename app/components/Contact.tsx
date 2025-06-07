@@ -1,8 +1,9 @@
 'use client';
-
 import type React from 'react';
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import axios from 'axios';
+import { toast } from 'react-hot-toast';
 
 interface FormData {
   name: string;
@@ -19,6 +20,7 @@ interface ContactInfo {
 }
 
 const Contact: React.FC = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -37,10 +39,22 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
+    setIsLoading(true);
+    axios
+      .post(
+        'https://getform.io/f/bjjorqmb',
+        {
+          formData,
+        },
+        { headers: { Accept: 'application/json' } }
+      )
+      .then((response) => {
+        toast.success('Message sent successfully!');
+        setIsLoading(false);
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      })
+      .catch((error) => console.log(error));
     // Reset form
-    setFormData({ name: '', email: '', subject: '', message: '' });
   };
 
   const contactInfo: ContactInfo[] = [
@@ -90,7 +104,7 @@ const Contact: React.FC = () => {
               </p>
             </div>
 
-            <div className="space-y-6">
+            {/* <div className="space-y-6">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-center space-x-4">
                   <div className="flex items-center justify-center w-12 h-12 bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400 rounded-full transition-colors duration-300">
@@ -109,7 +123,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           <div className="bg-white dark:bg-gray-900 p-8 rounded-xl shadow-lg border border-gray-100 dark:border-gray-700 transition-colors duration-300">
@@ -168,7 +182,7 @@ const Contact: React.FC = () => {
                 className="w-full inline-flex items-center justify-center px-6 py-3 bg-indigo-600 dark:bg-indigo-500 text-white font-medium rounded-lg hover:bg-indigo-700 dark:hover:bg-indigo-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl"
               >
                 <Send className="mr-2 w-4 h-4" />
-                Send Message
+                {isLoading ? 'loading....' : ' Send Message'}
               </button>
             </form>
           </div>

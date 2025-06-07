@@ -27,38 +27,16 @@ export const useWeather = () => {
       const API_KEY = process.env.REACT_APP_WEATHER_API_KEY || 'demo_key';
       const { latitude, longitude } = coords;
 
-      if (API_KEY === 'demo_key') {
-        // Simulate API call with mock data for demo
-        await new Promise((resolve) => setTimeout(resolve, 1000));
-
-        const mockWeather: WeatherData = {
-          location: 'Demo City',
-          temperature: Math.floor(Math.random() * 25) + 15, // 15-40°C
-          condition: ['Clear', 'Clouds', 'Rain', 'Snow', 'Mist'][
-            Math.floor(Math.random() * 5)
-          ],
-          description: 'Perfect weather for coding!',
-          humidity: Math.floor(Math.random() * 40) + 40, // 40-80%
-          windSpeed: Math.floor(Math.random() * 15) + 5, // 5-20 km/h
-        };
-
-        setWeather(mockWeather);
-        setLoading(false);
-        return;
-      }
-
-      // Real API call (uncomment when you have an API key)
-      /*
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric`
-      )
-      
+      );
+
       if (!response.ok) {
-        throw new Error('Weather data not available')
+        throw new Error('Weather data not available');
       }
-      
-      const data = await response.json()
-      
+
+      const data = await response.json();
+
       const weatherData: WeatherData = {
         location: data.name,
         temperature: Math.round(data.main.temp),
@@ -66,10 +44,9 @@ export const useWeather = () => {
         description: data.weather[0].description,
         humidity: data.main.humidity,
         windSpeed: Math.round(data.wind.speed * 3.6), // Convert m/s to km/h
-      }
-      
-      setWeather(weatherData)
-      */
+      };
+
+      setWeather(weatherData);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to fetch weather');
     } finally {

@@ -48,11 +48,16 @@ const About: React.FC = () => {
             </h3>
             <div className="space-y-4 text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
               <p>
-                With over 3 years of experience in web development, I specialize
-                in building modern, responsive applications using React,
-                Node.js, and other cutting-edge technologies. I'm passionate
-                about writing clean, efficient code and creating seamless user
-                experiences.
+                With over 2 years of experiencebuilding modern, responsive web
+                applications. I specialize in technologies like React, Next.js,
+                and TypeScript, with a growing interest in backend development
+                using NestJS,I’m passionate about writing clean, maintainable
+                code and creating seamless user experiences. Currently, I’m
+                focused on becoming a well-rounded software engineer and
+                building real-world projects that solve meaningful problems. My
+                goal is to not only grow as a developer but also to help others
+                by sharing knowledge and eventually becoming a software
+                development consultant.
               </p>
               <p>
                 When I'm not coding, you can find me exploring new technologies,

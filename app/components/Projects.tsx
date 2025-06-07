@@ -7,28 +7,28 @@ interface Project {
   image: string;
   technologies: string[];
   liveUrl: string;
-  githubUrl: string;
+  githubUrl?: string;
 }
 
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'E-Commerce Platform',
+      title: 'Build Africa',
       description:
-        'A full-stack e-commerce application built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
-      image: 'https://dummyimage.com/600x400/ffffff/000000',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+        'An e-commerce application built with Angular,PHP, and MongoDB. Features include user authentication, payment integration, and admin dashboard.',
+      image: '/images/BA.webp',
+      technologies: ['Angular', 'PHP', 'MongoDB', 'Vendy'],
+      liveUrl: 'https://buildafrica.store',
+      // githubUrl: 'https://github.com',
     },
     {
-      title: 'Task Management App',
+      title: 'BuildCore ',
       description:
-        'A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.',
-      image: 'https://dummyimage.com/600x400/ffffff/000000',
-      technologies: ['React', 'Socket.io', 'Express', 'PostgreSQL'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+        'A centralized organization workflow and collaborative task management application with real-time updates  and team collaboration features.',
+      image: '/images/BC.webp',
+      technologies: ['Angular', 'PHP', 'MongoDB'],
+      liveUrl: 'https://buildcore.buildafrica.store',
+      // githubUrl: 'https://github.com',
     },
     {
       title: 'Weather Dashboard',
@@ -54,11 +54,6 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20  transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Animated background elements */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-32 right-20 w-40 h-40 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-          <div className="absolute bottom-32 left-20 w-32 h-32 bg-gradient-to-br from-pink-400 to-red-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-          <div className="absolute top-1/2 right-1/3 w-28 h-28 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full mix-blend-multiply filter blur-xl opacity-15 animate-pulse animation-delay-4000"></div>
-        </div>
 
         <div className="relative z-10">
           {/* Header Section */}
@@ -71,7 +66,7 @@ const Projects: React.FC = () => {
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-indigo-600 dark:from-purple-400 dark:via-pink-400 dark:to-indigo-400 bg-clip-text text-transparent">
+              <span className="text-gray-700 dark:text-gray-300">
                 Featured Projects
               </span>
             </h2>
@@ -86,7 +81,7 @@ const Projects: React.FC = () => {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="group relative bg-white/90 dark:bg-gray-80 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-200/50 dark:border-gray-700/50 overflow-hidden hover:scale-[1.02] hover:-translate-y-2"
+                className="group relative bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-500 ease-in border border-gray-200/50 dark:border-gray-700/50 overflow-hidden hover:scale-[1.02] hover:-translate-y-2"
               >
                 {/* Project Image with Enhanced Overlay */}
                 <div className="relative overflow-hidden rounded-t-3xl">
@@ -96,7 +91,9 @@ const Projects: React.FC = () => {
                       'https://dummyimage.com/600x400/ffffff/000000M'
                     }
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110"
+                    className="w-full h-64 object-cover transition-all duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0 rounded-t-3xl"
+                    loading="lazy"
+                    decoding="async"
                   />
                   {/* Gradient Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
@@ -115,18 +112,20 @@ const Projects: React.FC = () => {
                         className="group-hover/btn:rotate-12 transition-transform duration-300"
                       />
                     </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center w-14 h-14 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-2xl hover:bg-white dark:hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg group/btn"
-                      aria-label="View GitHub repository"
-                    >
-                      <Github
-                        size={24}
-                        className="group-hover/btn:rotate-12 transition-transform duration-300"
-                      />
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center w-14 h-14 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm text-gray-700 dark:text-gray-300 rounded-2xl hover:bg-white dark:hover:bg-gray-800 hover:scale-110 transition-all duration-300 shadow-lg group/btn"
+                        aria-label="View GitHub repository"
+                      >
+                        <Github
+                          size={24}
+                          className="group-hover/btn:rotate-12 transition-transform duration-300"
+                        />
+                      </a>
+                    )}
                   </div>
 
                   {/* Project Status Badge */}
@@ -172,7 +171,7 @@ const Projects: React.FC = () => {
                       {project.technologies.map((tech, techIndex) => (
                         <span
                           key={techIndex}
-                          className="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-purple-900/50 text-indigo-700 dark:text-indigo-300 text-sm font-medium rounded-full border border-indigo-200 dark:border-indigo-700 hover:scale-105 transition-transform duration-200"
+                          className="px-3 py-1 bg-gradient-to-r from-indigo-100 to-purple-100 dark:from-indigo-900/50 dark:to-blue-900/50 text-indigo-700 dark:text-indigo-300 text-sm font-medium rounded-full border border-indigo-200 dark:border-indigo-700 hover:scale-105 transition-transform duration-200"
                         >
                           {tech}
                         </span>
@@ -191,15 +190,17 @@ const Projects: React.FC = () => {
                       <ExternalLink className="mr-2 w-4 h-4" />
                       Live Demo
                     </a>
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:scale-105"
-                    >
-                      <Github className="mr-2 w-4 h-4" />
-                      Code
-                    </a>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 font-medium rounded-xl hover:border-indigo-400 dark:hover:border-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 hover:scale-105"
+                      >
+                        <Github className="mr-2 w-4 h-4" />
+                        Code
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -210,7 +211,7 @@ const Projects: React.FC = () => {
           </div>
 
           {/* Project Statistics */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
             {[
               { label: 'Projects Completed', value: '50+', icon: '🚀' },
               { label: 'Happy Clients', value: '25+', icon: '😊' },
@@ -230,7 +231,7 @@ const Projects: React.FC = () => {
                 </div>
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* Call to Action */}
           <div className="text-center">

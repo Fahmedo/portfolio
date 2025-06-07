@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <h2 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-              Portfolio
+              Fahmedo
             </h2>
           </div>
 

@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from 'react-router';
-
+import { Toaster } from 'react-hot-toast';
 import type { Route } from './+types/root';
 import './app.css';
 import { ThemeProvider } from './context/Theme-context';
@@ -36,6 +36,26 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
+        <Toaster
+          position="top-right"
+          gutter={12}
+          containerStyle={{ margin: '8px' }}
+          toastOptions={{
+            success: {
+              duration: 3000,
+            },
+            error: {
+              duration: 5000,
+            },
+            style: {
+              fontSize: '16px',
+              maxWidth: '500px',
+              padding: '16px 24px',
+              backgroundColor: '#1b7a1b',
+              color: '#ffffff',
+            },
+          }}
+        />
         <ScrollRestoration />
         <Scripts />
       </body>
@@ -44,7 +64,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <>
+      <Outlet />
+    </>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
