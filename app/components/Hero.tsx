@@ -8,9 +8,10 @@ import {
   ArrowDown,
   MessageCircle,
 } from 'lucide-react';
-import { useGlitch } from 'react-powerglitch';
+import powerGlitch from 'react-powerglitch';
 
 const Hero: React.FC = () => {
+  const { useGlitch } = powerGlitch;
   const glitch = useGlitch();
   return (
     <section
