@@ -8,11 +8,11 @@ import {
   ArrowDown,
   MessageCircle,
 } from 'lucide-react';
-import powerGlitch from 'react-powerglitch';
+// import powerGlitch from 'react-powerglitch';
 
 const Hero: React.FC = () => {
-  const { useGlitch } = powerGlitch;
-  const glitch = useGlitch();
+  // const { useGlitch } = powerGlitch;
+  // const glitch = useGlitch();
   return (
     <section
       id="home"
@@ -38,8 +38,8 @@ const Hero: React.FC = () => {
                 <span
                   // className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent animate-pulse text-playWrite "
                   className="bg-black/50 dark:bg-white/50 bg-clip-text text-transparent animate-glitch font-playwrite block"
-                  ref={glitch.ref}
                 >
+                  {/* ref={glitch.ref} */}
                   Ahmed Faruq
                 </span>
               </h1>
