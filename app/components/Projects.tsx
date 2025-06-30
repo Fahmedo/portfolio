@@ -30,23 +30,23 @@ const Projects: React.FC = () => {
       liveUrl: 'https://buildcore.buildafrica.store',
       // githubUrl: 'https://github.com',
     },
+    // {
+    //   title: 'Weather Dashboard',
+    //   description:
+    //     'A responsive weather dashboard that displays current weather conditions and forecasts for multiple cities with beautiful data visualizations.',
+    //   image: 'https://dummyimage.com/600x400/ffffff/000000',
+    //   technologies: ['React', 'Chart.js', 'Weather API', 'CSS3'],
+    //   liveUrl: 'https://example.com',
+    //   githubUrl: 'https://github.com',
+    // },
     {
-      title: 'Weather Dashboard',
-      description:
-        'A responsive weather dashboard that displays current weather conditions and forecasts for multiple cities with beautiful data visualizations.',
-      image: 'https://dummyimage.com/600x400/ffffff/000000',
-      technologies: ['React', 'Chart.js', 'Weather API', 'CSS3'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
-    },
-    {
-      title: 'Portfolio Website',
+      title: 'Portfolio ',
       description:
         'A modern, responsive portfolio website showcasing projects and skills with smooth animations and optimized performance.',
-      image: 'https://dummyimage.com/600x400/ffffff/000000',
+      image: '/images/Portfolio.webp',
       technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com',
+      liveUrl: 'https://fahmedo.vercel.app/',
+      // githubUrl: 'https://github.com',
     },
   ];
 

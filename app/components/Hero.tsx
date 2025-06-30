@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight">
                 <span
                   // className="block bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 dark:from-indigo-400 dark:via-purple-400 dark:to-pink-400 bg-clip-text text-transparent animate-pulse text-playWrite "
-                  className="bg-black/50 dark:bg-white/50 bg-clip-text text-transparent animate-glitch font-playwrite block"
+                  className="bg-black/50 dark:bg-white bg-clip-text text-transparent animate-glitch font-playwrite block"
                 >
                   {/* ref={glitch.ref} */}
                   Ahmed Faruq
@@ -124,7 +124,7 @@ const Hero: React.FC = () => {
             {/* Download CV button */}
             <div className="pt-4">
               <a
-                href="/images/FARUQ AHMED R CV.pdf"
+                href="/images/Faruq_Ahmed_CV.pdf"
                 download
                 className="inline-flex items-center text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 font-medium transition-colors duration-200 group"
               >
